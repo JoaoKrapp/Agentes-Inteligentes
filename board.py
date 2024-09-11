@@ -1,22 +1,14 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import random
+class Board:
+    CLEAN_TILE = 0
+    WALL_TILE = 1
+    DIRT_TILE = 2
 
+    def __init__(self, board_array: list):
+        self.board_array = board_array
+        self.board_size = len(self.board_array)
 
-# Função que exibe o ambiente na tela
-def exibir(matriz):
-    posAPAx = 1
-    posAPAy = 1
+    def generate_dirt(self, dirt_quantity: int):
 
-    # Altera o esquema de cores do ambiente
-    plt.imshow(matriz, 'gray')
-    plt.nipy_spectral()
-
-    # Coloca o agente no ambiente
-    plt.plot([posAPAy], [posAPAx], marker='o', color='r', ls='')
-
-    plt.show(block=False)
-
-    # Pausa a execução do código por 0.5 segundos para facilitar a visualização
-    plt.pause(0.5)
-    plt.clf()
+        # TODO:
+        number_of_dirt_in_board = 0
+        print(self.board_array)

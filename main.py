@@ -1,25 +1,31 @@
-# This is a sample Python script.
-from board import exibir
+import matplotlib.pyplot as plt
+import time
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from board import Board
+from cleaner import Cleaner
 
-BOARD = [
-    [0, 0, 2, 0, 0, 1],
-    [0, 0, 2, 0, 0, 1],
-    [0, 0, 2, 0, 0, 1],
-    [0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 1],
+BOARD_ARRAY = [
+    [0, 0, 0, 0, 0, 2],
+    [0, 0, 0, 0, 0, 2],
+    [0, 0, 0, 0, 0, 2],
+    [0, 0, 0, 0, 0, 2],
+    [0, 0, 0, 0, 0, 2],
+    [0, 0, 0, 0, 0, 2],
 ]
+
+board = Board(BOARD_ARRAY)
+cleaner = Cleaner(board)
 
 
 def main():
-    exibir(BOARD)
+    for i in range(10):
+        cleaner.show_board()
+        movement_successful = cleaner.move_right()
+
+        if not movement_successful:
+            break
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
